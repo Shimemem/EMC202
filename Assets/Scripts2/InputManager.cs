@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControl;
-    public Vector2 movementInput;
+    private Vector2 movementInput;
     public float verticalInput, horizontalInput;
     // Heiarchy:
     // void Awake

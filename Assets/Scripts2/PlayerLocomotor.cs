@@ -39,6 +39,12 @@ public class PlayerLocomotor : MonoBehaviour
         targetDirection.Normalize();
         targetDirection.y = 0;
 
+        // line that makes the rotation same as direction.
+        if (targetDirection == Vector3.zero)
+        {
+            targetDirection = transform.forward;
+        }
+
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, PlayerManager.Instance.rotationSpeed);
         transform.rotation = playerRotation;

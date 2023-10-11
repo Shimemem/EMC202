@@ -6,8 +6,10 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControl;
-    private Vector2 movementInput;
+    public Vector2 movementInput;
     public float verticalInput, horizontalInput;
+    public float moveAmount;
+
     // Heiarchy:
     // void Awake
     // void Enable
@@ -35,5 +37,8 @@ public class InputManager : MonoBehaviour
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
+
+        moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+        PlayerManager.Instance.playerAnimation.UpdateAnimatorValues(0, moveAmount);
     }
 }

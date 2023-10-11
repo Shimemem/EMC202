@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    public Animator playerAnim;
-    // Start is called before the first frame update
-    void Start()
+    int horizontal, vertical;
+
+    private void Awake()
     {
-        playerAnim = GetComponentInChildren<Animator>();
+        horizontal = Animator.StringToHash("Horizontal");
+        vertical = Animator.StringToHash("Vertical");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement)
     {
-        
+        // danp time = blend time,
+        PlayerManager.Instance.playerAnim.SetFloat(horizontal, horizontalMovement, 0.1f, Time.deltaTime);
+        PlayerManager.Instance.playerAnim.SetFloat(vertical, verticalMovement, 0.1f, Time.deltaTime);
     }
 }

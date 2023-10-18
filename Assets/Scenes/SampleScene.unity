@@ -367,14 +367,15 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3ee7f43d4e312ca44891ed559441992a, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f7e79c515b2d1b94f8731681f5158e35,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f7e79c515b2d1b94f8731681f5158e35,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 805404924}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e79c515b2d1b94f8731681f5158e35, type: 3}
 --- !u!1 &220293724
 GameObject:
@@ -596,7 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 2, z: -4}
   player: {fileID: 897338687}
-  smoothSpeed: 102
+  smoothSpeed: 1000
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +816,7 @@ Transform:
   m_GameObject: {fileID: 461830608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 2, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -870,8 +871,13 @@ MonoBehaviour:
   inputManager: {fileID: 0}
   movementSpeed: 5.04
   rotationSpeed: 0.3
+  sprintSpeed: 10
+  walkSpeed: 0
   playerAnim: {fileID: 805404925}
-  playerAnimation: {fileID: 805404924}
+  playerAnimation: {fileID: 0}
+  isSprinting: 0
+  isWalking: 0
+  isJumping: 0
 --- !u!1 &750286007
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,30 +1001,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750286007}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &805404915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f7e79c515b2d1b94f8731681f5158e35,
-    type: 3}
-  m_PrefabInstance: {fileID: 162481337}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &805404916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f7e79c515b2d1b94f8731681f5158e35,
     type: 3}
   m_PrefabInstance: {fileID: 162481337}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &805404924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805404915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbac4a233785272418677a1b1309152e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &805404925 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: f7e79c515b2d1b94f8731681f5158e35,
@@ -1087,6 +1075,7 @@ GameObject:
   - component: {fileID: 897338690}
   - component: {fileID: 897338689}
   - component: {fileID: 897338688}
+  - component: {fileID: 897338692}
   m_Layer: 0
   m_Name: Week 4/5
   m_TagString: Untagged
@@ -1153,6 +1142,8 @@ MonoBehaviour:
   verticalInput: 0
   horizontalInput: 0
   moveAmount: 0
+  sprint_Input: 0
+  walk_Input: 0
 --- !u!114 &897338690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1179,18 @@ CapsuleCollider:
   m_Height: 1.7362982
   m_Direction: 1
   m_Center: {x: -0.0050182343, y: 0.8940317, z: 0.005504608}
+--- !u!114 &897338692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897338686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbac4a233785272418677a1b1309152e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &906368138
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5565151e26ae2b243b5a118a6c40fb0a
+guid: b86457b4b928f5b4e8c308b06e00faa7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Slow Run
+      name: Slow Run 1
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
@@ -46,13 +46,13 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
-      keepOriginalOrientation: 1
-      keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 1
-      heightFromFeet: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -544,13 +544,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Erika Archer@Slow Run(Clone)
+    - name: Erika Archer@Slow Run 1(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Erika Archer@Slow Run(Clone)
+      parentName: Erika Archer@Slow Run 1(Clone)
       position: {x: 0.00021628021, y: 1.0233722, z: 0.018810365}
       rotation: {x: 0.0055038817, y: 0.030882947, z: 0.008309196, w: 0.99947333}
       scale: {x: 1, y: 1, z: 1}

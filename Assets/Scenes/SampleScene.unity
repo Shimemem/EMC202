@@ -870,7 +870,7 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   inputManager: {fileID: 0}
   movementSpeed: 5.04
-  rotationSpeed: 0.3
+  rotationSpeed: 0.17
   sprintSpeed: 10
   walkSpeed: 0
   playerAnim: {fileID: 805404925}
